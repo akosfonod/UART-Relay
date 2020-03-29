@@ -1,7 +1,13 @@
 #define BAUD 115200
 #define STATUS_LED 13
-#define CONTROL_PIN 4
 #define UART_TIMEOUT 200 //Timeout in ms.
+
+#ifdef nano
+    #define CONTROL_PIN 2
+#endif
+#ifdef promini
+    #define CONTROL_PIN 4
+#endif
 
 bool state = true;
 bool previous_state = state;
